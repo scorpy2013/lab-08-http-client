@@ -12,11 +12,11 @@ std::string Reference::get_host() {
     reference = reference.substr(7);
   }
   std::string result;
-  for (char i : reference) {
-    if (i == ':') {
+  for (char it : reference) {
+    if (it == ':') {
       break;
     }
-    result += i;
+    result += it;
   }
   return result;
 }
@@ -29,11 +29,11 @@ std::string Reference::get_port() {
       break;
     }
   }
-  for (unsigned j = i + 1; j < reference.size(); ++i) {
-    if (reference[i] == '/') {
+  for (unsigned j = i + 1; j < reference.size(); ++j) {
+    if (reference[j] == '/') {
       break;
     }
-    result += reference[i];
+    result += reference[j];
   }
 
   return result;
@@ -45,8 +45,8 @@ std::string Reference::get_target() {
   for (; i < reference.size(); ++i) {
     if (reference[i] == '/') break;
   }
-  for (unsigned j = i; j < reference.size(); ++i) {
-    result += reference[i];
+  for (unsigned j = i; j < reference.size(); ++j) {
+    result += reference[j];
   }
 
   return result;
