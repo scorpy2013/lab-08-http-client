@@ -3,8 +3,7 @@
 #include <HTTP_Client.hpp>
 
 int main(int argc, char* argv[]) {
-  argc=3;
+  argc = 3;
   HTTP_Client client(argc, argv);
   return client.Start();
 }
-
