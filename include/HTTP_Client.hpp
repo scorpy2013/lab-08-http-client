@@ -26,10 +26,10 @@ struct Request {
   std::string request;
   int version;
 };
-
+//
 class HTTP_Client {
  private:
-  void prepareCommandLine();
+  void prepare_command_line();
   int argc_;
   char** argv_;
   Request parts;

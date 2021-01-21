@@ -3,16 +3,16 @@
 #include <Reference.hpp>
 #include <utility>
 
-Reference::Reference(std::string reference_)
-    : reference(std::move(reference_)) {}
-std::string Reference::get_url() { return reference; }
+Reference::Reference(std::string reference)
+    : reference_(std::move(reference)) {}
+std::string Reference::get_url() { return reference_; }
 
 std::string Reference::get_host() {
-  if (reference.find("http://") == 0) {
-    reference = reference.substr(7);
+  if (reference_.find("http://") == 0) {
+    reference_ = reference_.substr(7);
   }
   std::string result;
-  for (char it : reference) {
+  for (char it : reference_) {
     if (it == ':') {
       break;
     }
@@ -21,32 +21,32 @@ std::string Reference::get_host() {
   return result;
 }
 std::string Reference::get_port() {
-  if (reference.find("http://") == 0) reference = reference.substr(7);
+  if (reference_.find("http://") == 0) reference_ = reference_.substr(7);
   std::string result;
   unsigned i = 0;
-  for (; i < reference.size(); ++i) {
-    if (reference[i] == ':') {
+  for (; i < reference_.size(); ++i) {
+    if (reference_[i] == ':') {
       break;
     }
   }
-  for (unsigned j = i + 1; j < reference.size(); ++j) {
-    if (reference[j] == '/') {
+  for (unsigned j = i + 1; j < reference_.size(); ++j) {
+    if (reference_[j] == '/') {
       break;
     }
-    result += reference[j];
+    result += reference_[j];
   }
 
   return result;
 }
 std::string Reference::get_target() {
-  if (reference.find("http://") == 0) reference = reference.substr(7);
+  if (reference_.find("http://") == 0) reference_ = reference_.substr(7);
   std::string result;
   unsigned i = 0;
-  for (; i < reference.size(); ++i) {
-    if (reference[i] == '/') break;
+  for (; i < reference_.size(); ++i) {
+    if (reference_[i] == '/') break;
   }
-  for (unsigned j = i; j < reference.size(); ++j) {
-    result += reference[j];
+  for (unsigned j = i; j < reference_.size(); ++j) {
+    result += reference_[j];
   }
 
   return result;

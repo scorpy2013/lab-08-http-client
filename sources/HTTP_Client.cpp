@@ -17,7 +17,7 @@ int HTTP_Client::Start() {
   }
 
   try {
-    prepareCommandLine();
+    prepare_command_line();
 
     net::io_context ioc;
     tcp::resolver resolver{ioc};
@@ -57,12 +57,12 @@ int HTTP_Client::Start() {
   return EXIT_SUCCESS;
 }
 
-void HTTP_Client::prepareCommandLine() {
-  Reference url(argv_[1]);
-  parts.url = url.get_url();
-  parts.host = url.get_host();
-  parts.port = url.get_port();
-  parts.target = url.get_target();
+void HTTP_Client::prepare_command_line() {
+  Reference reference(argv_[1]);
+  parts.url = reference.get_url();
+  parts.host = reference.get_host();
+  parts.port = reference.get_port();
+  parts.target = reference.get_target();
   parts.request = argv_[2];
   parts.version = 11;
 }
