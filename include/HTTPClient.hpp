@@ -1,7 +1,7 @@
 // Copyright 2020 Your Name <your_email>
 
-#ifndef INCLUDE_HTTP_CLIENT_HPP_
-#define INCLUDE_HTTP_CLIENT_HPP_
+#ifndef INCLUDE_HTTPCLIENT_HPP_
+#define INCLUDE_HTTPCLIENT_HPP_
 #include <boost/asio/connect.hpp>
 #include <boost/asio/ip/tcp.hpp>
 #include <boost/beast/core.hpp>
@@ -39,4 +39,4 @@ class HTTP_Client {
   int Start();
 };
 
-#endif  // INCLUDE_HTTP_CLIENT_HPP_
+#endif  // INCLUDE_HTTPCLIENT_HPP_
