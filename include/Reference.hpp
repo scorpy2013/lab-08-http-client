@@ -7,10 +7,10 @@
 class Reference {
  public:
   explicit Reference(std::string reference);
-  std::string get_url();
-  std::string get_host();
-  std::string get_port();
-  std::string get_target();
+  std::string GetUrl();
+  std::string GetHost();
+  std::string GetPort();
+  std::string GetTarget();
 
  private:
   std::string reference_;

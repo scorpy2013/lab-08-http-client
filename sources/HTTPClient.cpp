@@ -1,10 +1,10 @@
 // Copyright 2020 Your Name <your_email>
 
-#include "HTTP_Client.hpp"
+#include "HTTPClient.hpp"
 
-HTTP_Client::HTTP_Client(int argc, char* argv[]) : argc_(argc), argv_(argv) {}
+HTTPClient::HTTPClient(int argc, char* argv[]) : argc_(argc), argv_(argv) {}
 
-int HTTP_Client::Start() {
+int HTTPClient::Start() {
   if (argc_ != 3) {
     std::cerr << "Usage: http-client-sync <url> "
                  "<request>\n"
@@ -17,7 +17,7 @@ int HTTP_Client::Start() {
   }
 
   try {
-    prepare_command_line();
+    PrepareCommandLine();
 
     net::io_context ioc;
     tcp::resolver resolver{ioc};
@@ -57,12 +57,12 @@ int HTTP_Client::Start() {
   return EXIT_SUCCESS;
 }
 
-void HTTP_Client::prepare_command_line() {
+void HTTPClient::PrepareCommandLine() {
   Reference reference(argv_[1]);
-  parts.url = reference.get_url();
-  parts.host = reference.get_host();
-  parts.port = reference.get_port();
-  parts.target = reference.get_target();
+  parts.url = reference.GetUrl();
+  parts.host = reference.GetHost();
+  parts.port = reference.GetPort();
+  parts.target = reference.GetTarget();
   parts.request = argv_[2];
   parts.version = 11;
 }

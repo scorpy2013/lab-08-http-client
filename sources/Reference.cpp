@@ -5,9 +5,9 @@
 
 Reference::Reference(std::string reference)
     : reference_(std::move(reference)) {}
-std::string Reference::get_url() { return reference_; }
+std::string Reference::GetUrl() { return reference_; }
 
-std::string Reference::get_host() {
+std::string Reference::GetHost() {
   if (reference_.find("http://") == 0) {
     reference_ = reference_.substr(7);
   }
@@ -20,7 +20,7 @@ std::string Reference::get_host() {
   }
   return result;
 }
-std::string Reference::get_port() {
+std::string Reference::GetPort() {
   if (reference_.find("http://") == 0) reference_ = reference_.substr(7);
   std::string result;
   unsigned i = 0;
@@ -38,7 +38,7 @@ std::string Reference::get_port() {
 
   return result;
 }
-std::string Reference::get_target() {
+std::string Reference::GetTarget() {
   if (reference_.find("http://") == 0) reference_ = reference_.substr(7);
   std::string result;
   unsigned i = 0;
