@@ -1,5 +1,6 @@
-// Copyright 2020 Your Name <your_email>
-
+//
+// Created by alexscorpy on 22.01.2021.
+//
 #include <HTTPClient.hpp>
 
 int main(int argc, char* argv[]) {
