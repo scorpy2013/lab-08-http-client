@@ -37,8 +37,8 @@ add_executable(tests
         # TODO: enum your files and delete this comment
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/HTTPClient.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/sources/Reference.cpp
-        ${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp
-        #${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
+        #${CMAKE_CURRENT_SOURCE_DIR}/demo/main.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/tests/test.cpp
         demo/main.cpp)
 
 target_include_directories(tests
